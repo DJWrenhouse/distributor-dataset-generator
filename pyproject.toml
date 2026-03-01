@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synthetic-distributor-dataset"
+version = "2.0.1"
+description = "Synthetic distributor dataset generator"
+authors = [
+    {name = "Andrew Johnson", email = "andrew_johnson@djwrenhouse.com"}
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "Faker",
+    "requests"
+]
+license = {text = "MIT"}
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["W291", "W293"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.pylint.messages_control]
+disable = ["line-too-long"]
